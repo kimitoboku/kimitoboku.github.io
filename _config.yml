@@ -1,0 +1,14 @@
+# Site settings
+title: あの忘れえぬ日々 そのために今生きている
+email: emxaser@bonprosoft.com
+url: "http://blog.techack.net"
+encoding: utf-8
+author :
+  name : Kawakami Kento
+  email : emaxser@bonprosoft.com
+github: kimiboku
+
+
+# Build settings
+markdown: kramdown
+permalink: /archive/:year/:month/:day/:title

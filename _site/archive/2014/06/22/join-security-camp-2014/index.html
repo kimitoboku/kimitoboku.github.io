@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>セキュリティ・キャンプ 2014に参加出来るっぽい</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+    <link rel="canonical" href="http://blog.techack.net/archive/2014/06/22/join-security-camp-2014">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="/">あの忘れえぬ日々 そのために今生きている</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          <a class="page-link" href="/feed.xml"></a>
+        
+          <a class="page-link" href="/index.html"></a>
+        
+          <a class="page-link" href="/tags/">Tags</a>
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>セキュリティ・キャンプ 2014に参加出来るっぽい</h1>
+    <p class="meta">Jun 22, 2014</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="emaxser" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </header>
+  
+  <article class="post-content">
+  <h1 id="section">タイトルのまんま</h1>
+<p><a href="http://www.ipa.go.jp/jinzai/camp/2014/zenkoku2014.html">セキュリティ・キャンプ全国大会2014</a>に参加出来る事が決定しました。</p>
+
+<p>参加するクラスはネットワーク・セキュリティ・クラスです。</p>
+
+<p>去年とかも応募したのですが、落ちてしまって、そして某足軽君が行ける事になってるのを見て無駄に悔しくて一年間くらいちょっとネットワーク系の事とか調べたりしたりしたような気がしないでもないです</p>
+
+<p>セキュリティはそれほど詳しくないですがインターネット(ノット?)が基本的に大好きなので自分の回りの人と自分が楽に安全に楽しめるように成れば良いなぁと思ってるので楽して生きるために頑張りたいです。</p>
+
+<h2 id="section-1">応募用紙の取り出し</h2>
+<p>と言っても他の人がやってらっしゃるので、 某三村さんの記事あたりを見るとすっごい良く分かると思うので、俺がやった事をまとめとしてちょちょっと。</p>
+
+<p>とりあえず、ダウンロードしてきたファイルに拡張子等が付いていなかったので、fileコマンドを使用するとパケットキャプチャファイルだと教えてくれました。</p>
+
+<p>パケットキャプチャファイルだと別ればとりあえずもう、Wiresharkで開いてみると、完全にhttpでファイルをダウンロードしてるパケットだったので、Wiresharkのオブジェクトを取り出す機能を使用して問題の内容を取り出しました。</p>
+
+<p>また、某先輩に言われてこのファイルを読むと中身にコンテンツのタイプをgzipに指定している部分があったのでどーにか取り出せないかとやってみたりとかしたのですが、バイナリからだとファイルを分割して送信されているらしき所が
+上手く判定出来なかったので失敗しました。</p>
+
+<blockquote>
+  <p>fileコマンド<br />
+fileコマンドは渡されたファイルをファイルシステムテスト、マジックナンバーテスト、言語テストの順番でそのファイルの形式を確認してくれるコマンドです。  </p>
+</blockquote>
+
+<blockquote>
+  <p>マジックナンバー<br />
+マジックナンバーはファイルの先頭部分などに存在するのファイルの形式などを識別するために使用される特定の数値。</p>
+</blockquote>
+
+<blockquote>
+  <p>Wireshark<br />
+Wiresharkはネットワーク解析ソフトでパケットキャプチャ機能や様々な解析のための機能を提供してくれている便利なツール</p>
+</blockquote>
+
+<h1 id="section-2">応募用紙に書いた内容?</h1>
+<p>をまんま公開するのはちょっと、精神的に辛いのでどんな感じの事を書いたのかを要約して書きかきします。</p>
+
+<p>まぁ、前半の部分は全部公開しちゃって大丈夫なはず。精神的に</p>
+
+<h2 id="section-3">☆ 基礎知識を問う質問(回答必須)</h2>
+
+<h3 id="i-tcpsyn">i) あるTCPポートにSYNパケットを送るとどんなパケットが返ってきますか？</h3>
+<p>SYN ACKフラグの立ったパケットが帰ってくるはずなので。</p>
+
+<p>TCP/IP上で動作するhttpのパケットで確認してみると。</p>
+
+<p>Id = 12<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.55<br />
+Captured Length = 78<br />
+Packet Length = 78<br />
+Protocol = TCP<br />
+Information = 51484 -&gt; HTTP ([SYN], Seq=140737417735616, Ack=4294967296, Win=65535)<br />
+Date Received = 2014-05-24 04:14:34 +0000<br />
+Time Delta = 0.7928600311279297  </p>
+
+<p>Id = 13<br />
+Source = 173.194.38.55<br />
+Destination = 192.168.11.2<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = TCP<br />
+Information = HTTP -&gt; 51484 ([ACK, SYN], Seq=140736165417646, Ack=8519314881, Win=42900)<br />
+Date Received = 2014-05-24 04:14:34 +0000<br />
+Time Delta = 0.8011610507965088  </p>
+
+<p>Id = 14<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.55<br />
+Captured Length = 54<br />
+Packet Length = 54<br />
+Protocol = TCP<br />
+Information = 51484 -&gt; HTTP ([ACK], Seq=140737417735617, Ack=7266996911, Win=16384)<br />
+Date Received = 2014-05-24 04:14:34 +0000<br />
+Time Delta = 0.8012058734893799  </p>
+
+<p>Id = 15<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.55<br />
+Captured Length = 130<br />
+Packet Length = 130<br />
+Protocol = TCP<br />
+Information = 51484 -&gt; HTTP ([ACK, PUSH], Seq=140737417735617, Ack=7266996911, Win=16384)<br />
+Date Received = 2014-05-24 04:14:34 +0000<br />
+Time Delta = 0.8013410568237305  </p>
+
+<p>Id = 16<br />
+Source = 173.194.38.55<br />
+Destination = 192.168.11.2<br />
+Captured Length = 60<br />
+Packet Length = 60<br />
+Protocol = TCP<br />
+Information = HTTP -&gt; 51484 ([ACK], Seq=140736165417647, Ack=8519314957, Win=670)<br />
+Date Received = 2014-05-24 04:14:34 +0000<br />
+Time Delta = 0.8092708587646484  </p>
+
+<p>Id = 17<br />
+Source = 173.194.38.55<br />
+Destination = 192.168.11.2<br />
+Captured Length = 627<br />
+Packet Length = 627<br />
+Protocol = TCP<br />
+Information = HTTP -&gt; 51484 ([ACK, PUSH], Seq=140736165417647, Ack=8519314957, Win=670)<br />
+Date Received = 2014-05-24 04:14:34 +0000<br />
+Time Delta = 0.8540668487548828  </p>
+
+<p>となり、
+SYN-&gt;<br />
+&lt;-SYN ACK<br />
+-&gt;ACK  </p>
+
+<p>の3way handshakeが行われてからデータのやりとりを開始する事を確認した。</p>
+
+<p>また、IDが12のパケットのシークエンス番号が140737417735616で14のパケットでは140737417735617となっておりシークエンス番号の増加が確認出来き、IDが13と16のパケットのシークエンス番号が140736165417646と140736165417647となっておりこちらもシークエンス番号の増加が確認出来きた。
+しかし、ACKの値が受信したシークエンス番号から計算されるという所は確認が出来なかった。</p>
+
+<h3 id="iiudpudp">ii）閉じているUDPポートにUDPパケットを送ると返ってくるパケットは何ですか？</h3>
+<p>サーバーの設定によるがICMPのポート到達不能エラーが帰ってくるはずなのでUDPのパケットを開いていないポートに送信してみる。</p>
+
+<div class="highlight"><pre><code class="c"><span class="lineno"> 1</span> <span class="c1">//UPDを送信するコード そうしんするIPは自分のVPS</span>
+<span class="lineno"> 2</span> <span class="cp">#include&lt;sys/types.h&gt;</span>
+<span class="lineno"> 3</span> <span class="cp">#include&lt;sys/socket.h&gt;</span>
+<span class="lineno"> 4</span> <span class="cp">#include&lt;netinet/in.h&gt;</span>
+<span class="lineno"> 5</span> 
+<span class="lineno"> 6</span> <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+<span class="lineno"> 7</span>   <span class="kt">int</span> <span class="n">sock</span><span class="p">;</span>
+<span class="lineno"> 8</span>   <span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n">addr</span><span class="p">;</span>
+<span class="lineno"> 9</span> 
+<span class="lineno">10</span>   <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span><span class="n">SOCK_DGRAM</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span>   <span class="n">addr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+<span class="lineno">13</span>   <span class="n">addr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="mi">34234</span><span class="p">);</span>
+<span class="lineno">14</span>   <span class="n">addr</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="s">&quot;49.212.146.45&quot;</span><span class="p">);</span>
+<span class="lineno">15</span> 
+<span class="lineno">16</span>   <span class="n">sendto</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span><span class="s">&quot;TEST&quot;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,(</span><span class="k">struct</span> <span class="n">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">addr</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">addr</span><span class="p">));</span>
+<span class="lineno">17</span> 
+<span class="lineno">18</span>   <span class="n">close</span><span class="p">(</span><span class="n">sock</span><span class="p">);</span>
+<span class="lineno">19</span> 
+<span class="lineno">20</span>   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="lineno">21</span> <span class="p">}</span></code></pre></div>
+
+<p>このコードで次のパケットが送信される</p>
+
+<p>Id = 136<br />
+Source = 192.168.11.2<br />
+Destination = 49.212.146.45<br />
+Captured Length = 46<br />
+Packet Length = 46<br />
+Protocol = UDP<br />
+Information = 59095 &gt; 34234<br />
+Date Received = 2014-05-24 04:07:20 +0000<br />
+Time Delta = 5.160772085189819<br />
+Headerlength: 4 bytes, <br />
+Data follows:<br />
+00000   54 45 53 54  TEST  </p>
+
+<p>そうすると次のパケットが帰ってくる</p>
+
+<p>Id = 137<br />
+Source = 49.212.146.45<br />
+Destination = 192.168.11.2<br />
+Captured Length = 74<br />
+Packet Length = 74<br />
+Protocol = ICMP<br />
+Information = Destination unreachable (Code=Code: Port unreachable)<br />
+Date Received = 2014-05-24 04:07:20 +0000<br />
+Time Delta = 5.171937227249146  </p>
+
+<p>予想の通りのICMPのポートの到達不能エラーが帰ってきた。</p>
+
+<h3 id="iiiicmp-echo-request">iii）ICMP Echo Requestを送ると返ってくると想定されるパケットは何ですか？</h3>
+<p>ICMP Echo Requestを送信するとEcho Replyタイプになったデータが同じSourceとDestinationが入れ変り、識別子がそのパケットに変更されたパケットが帰ってくるはずなのでpingがICMP Echo Requestを使用しているので確かめてみると。</p>
+
+<p>送信パケット</p>
+
+<p>Source = 192.168.11.2<br />
+Destination = 173.194.38.7<br />
+Type = IP (0x0800)<br />
+Length = 64 bytes<br />
+Type = 8 (Echo request)<br />
+Identification = 0x7203 (29187)<br />
+Data = 537f062a000b3f5108090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637  </p>
+
+<p>返信パケット</p>
+
+<p>Source = 173.194.38.7<br />
+Destination = 192.168.11.2<br />
+Type = IP (0x0800)<br />
+Length = 64 bytes<br />
+Type = 0 (Echo reply)<br />
+Identification = 0x24eb (9451)<br />
+Data = 537f062a000b3f5108090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637  </p>
+
+<p>になっておりその通りに動作を行なっていた。</p>
+
+<h3 id="ivwindowstracertlinuxtraceroute">iv）WindowsのtracertとLinuxのtracerouteの違いを説明してください。</h3>
+<p>WindowsのtracertはICMPを使用して動作するが、LinuxのtracerouteはUDPを用いで動作するはずである。</p>
+
+<p>まず、Linuxで動作させたtracerouteの送信パケットを見てみると</p>
+
+<p>Id = 7<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33435<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8109159469604492<br />
+Time to live = 1  </p>
+
+<p>Id = 9<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33436<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8117408752441406<br />
+Time to live = 1  </p>
+
+<p>Id = 11<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33437<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8119409084320068<br />
+Time to live = 1  </p>
+
+<p>Id = 13<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33438<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8121449947357178<br />
+Time to live = 2  </p>
+
+<p>Id = 15<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33439<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8174099922180176<br />
+Time to live = 2  </p>
+
+<p>Id = 17<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33440<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8216619491577148<br />
+Time to live = 2  </p>
+
+<p>Id = 19<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33441<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8255949020385742<br />
+Time to live = 3  </p>
+
+<p>Id = 21<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33442<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8298270702362061<br />
+Time to live = 3  </p>
+
+<p>Id = 23<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33443<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8336858749389648<br />
+Time to live = 3  </p>
+
+<p>Id = 25<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33444<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8377158641815186<br />
+Time to live = 4  </p>
+
+<p>Id = 27<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33445<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8422000408172607<br />
+Time to live = 4  </p>
+
+<p>Id = 29<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33446<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8464679718017578<br />
+Time to live = 4  </p>
+
+<p>Id = 31<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33447<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8504970073699951<br />
+Time to live = 5  </p>
+
+<p>Id = 37<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33449<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.8805060386657715<br />
+Time to live = 5  </p>
+
+<p>Id = 39<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33450<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.88484787940979<br />
+Time to live = 6  </p>
+
+<p>Id = 43<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33451<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.9007840156555176<br />
+Time to live = 6  </p>
+
+<p>Id = 47<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33452<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.9190299510955811<br />
+Time to live = 6  </p>
+
+<p>Id = 49<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33453<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.9270999431610107<br />
+Time to live = 7  </p>
+
+<p>Id = 54<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33454<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.9431729316711426<br />
+Time to live = 7  </p>
+
+<p>Id = 58<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33455<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.9598278999328613<br />
+Time to live = 7  </p>
+
+<p>Id = 60<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33456<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 0.967059850692749<br />
+Time to live = 8  </p>
+
+<p>Id = 65<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33457<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.076746940612793<br />
+Time to live = 8  </p>
+
+<p>Id = 67<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33458<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.084051847457886<br />
+Time to live = 8  </p>
+
+<p>Id = 69<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33459<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.091171979904175<br />
+Time to live = 9  </p>
+
+<p>Id = 73<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33460<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.151911973953247<br />
+Time to live = 9  </p>
+
+<p>Id = 75<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33461<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.159287929534912<br />
+Time to live = 9  </p>
+
+<p>Id = 77<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33462<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.166629076004028<br />
+Time to live = 10  </p>
+
+<p>Id = 83<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33463<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.238141059875488<br />
+Time to live = 10  </p>
+
+<p>Id = 85<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33464<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.245821952819824<br />
+Time to live = 10  </p>
+
+<p>Id = 87<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33465<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.253227949142456<br />
+Time to live = 11  </p>
+
+<p>Id = 91<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33466<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.269459009170532<br />
+Time to live = 11  </p>
+
+<p>Id = 93<br />
+Source = 192.168.11.2<br />
+Destination = 173.194.38.31<br />
+Captured Length = 66<br />
+Packet Length = 66<br />
+Protocol = UDP<br />
+Information = 51924 &gt; 33467<br />
+Date Received = 2014-05-24 03:58:09 +0000<br />
+Time Delta = 1.276155948638916<br />
+Time to live = 11  </p>
+
+<p>となっておりUDPで動作している事が確認出来た。</p>
+
+<p>Windowsのtracertのパケットを観察してみると</p>
+
+<p>4	1.155242000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=42/10752, ttl=1<br />
+6	1.158363000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=43/11008, ttl=1<br />
+8	1.160939000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=44/11264, ttl=1<br />
+24	6.674609000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=45/11520, ttl=2<br />
+26	6.682627000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=46/11776, ttl=2<br />
+28	6.688931000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=47/12032, ttl=2<br />
+33	7.700407000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=48/12288, ttl=3<br />
+35	7.707149000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=49/12544, ttl=3<br />
+37	7.713497000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=50/12800, ttl=3<br />
+45	8.724440000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=51/13056, ttl=4<br />
+47	8.731367000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=52/13312, ttl=4<br />
+49	8.744569000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=53/13568, ttl=4<br />
+51	9.754305000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=54/13824, ttl=5<br />
+53	9.761093000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=55/14080, ttl=5<br />
+55	9.768844000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=56/14336, ttl=5<br />
+59	10.780171000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=57/14592, ttl=6<br />
+61	10.792900000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=58/14848, ttl=6<br />
+63	10.804177000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=59/15104, ttl=6<br />
+67	11.814143000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=60/15360, ttl=7<br />
+69	11.828017000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=61/15616, ttl=7<br />
+71	11.838012000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=62/15872, ttl=7<br />
+73	12.847262000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=63/16128, ttl=8<br />
+75	12.857432000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=64/16384, ttl=8<br />
+77	12.867300000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=65/16640, ttl=8<br />
+102	18.385592000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=66/16896, ttl=9<br />
+104	18.402726000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=67/17152, ttl=9<br />
+106	18.412728000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=68/17408, ttl=9<br />
+119	23.926610000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=69/17664, ttl=10<br />
+121	23.937736000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=70/17920, ttl=10<br />
+123	23.948326000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=71/18176, ttl=10<br />
+161	29.462742000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=72/18432, ttl=11<br />
+163	29.472473000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=73/18688, ttl=11<br />
+165	29.488740000	192.168.11.6	173.194.38.56	ICMP	106	Echo (ping) request  id=0x0001, seq=74/18944, ttl=11  </p>
+
+<p>のようになっており予想通りICMPで動作している事を確認した。</p>
+
+<h3 id="vwindowspinglinuxping">v）WindowsのpingとLinuxのpingの違いを説明してください。</h3>
+<p>LinuxとWindowsのpingの違いが分からなかったのでそれぞれのパケットを見てみます。</p>
+
+<p>Linuxのpingの送信パケットの内容を見てみると</p>
+
+<p>Packet length = 98 バイト<br />
+Time to live = 64<br />
+ICMP-Header{<br />
+	Type = 8 (Echo request)<br />
+	Data = 5ea9845300000000914e030000000000101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637<br />
+}  </p>
+
+<p>となっておりWindowsの送信パケットを見てみると</p>
+
+<p>Packet length = 74 バイト<br />
+Time to live = 128<br />
+ICMP-Header{<br />
+	Type = 8 (Echo request)<br />
+	Data = 6162636465666768696a6b6c6d6e6f7071727374757677616263646566676869<br />
+}  </p>
+
+<p>となっておりTime to liveがLinuxでは64、Windowsは128でWindowsの方がパケットとしての生存時間が長い。</p>
+
+<p>ICMPのEcho RequestのデータがLinuxでは!”#$%&amp;’()*+,-./01234567となっているが、Windowsではabcdefghijklmnopqrstuvwabcdefghiになっている。</p>
+
+<p>あと気になったのでMacでの送信パケットを見てみると</p>
+
+<p>Packet length = 98 バイト<br />
+Time to live = 64<br />
+ICMP-Header{<br />
+	Type = 8 (Echo request)<br />
+	Data = 5385fc09000db9e108090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f3031323334353637<br />
+}  </p>
+
+<p>となっておりLinuxとほぼ同じ動作を行なっていた。</p>
+
+<h3 id="vi">vi）パケットを送るときに分割して送ることを何と言いますか？</h3>
+<p>IPフラグメンテーションといいプロトコルが指定してるサイズ以上でフラグメンテーションのフラグが許可になっている時にパケットを分割して送信を行なう。</p>
+
+<p>フラグメンテーションが行なわれているか確認するためにping -s 5000として断片化されるかを確認してみる。</p>
+
+<p>送信パケット</p>
+
+<p>66	2.871552000	192.168.11.2	49.212.146.45	ICMP	1514	Echo (ping) request  id=0x4b1c, seq=0/0, ttl=64<br />
+67	2.871563000	192.168.11.2	49.212.146.45	IPv4	1514	Fragmented IP protocol (proto=ICMP 1, off=1480, ID=8f51)<br />
+68	2.871567000	192.168.11.2	49.212.146.45	IPv4	1514	Fragmented IP protocol (proto=ICMP 1, off=2960, ID=8f51)<br />
+69	2.871570000	192.168.11.2	49.212.146.45	IPv4	602	Fragmented IP protocol (proto=ICMP 1, off=4440, ID=8f51)  </p>
+
+<p>返答パケット</p>
+
+<p>74	2.936957000	49.212.146.45	192.168.11.2	IPv4	778	Fragmented IP protocol (proto=ICMP 1, off=0, ID=71f4) [Reassembled in #80]<br />
+75	2.936960000	49.212.146.45	192.168.11.2	IPv4	770	Fragmented IP protocol (proto=ICMP 1, off=744, ID=71f4) [Reassembled in #80]<br />
+76	2.936962000	49.212.146.45	192.168.11.2	IPv4	778	Fragmented IP protocol (proto=ICMP 1, off=1480, ID=71f4) [Reassembled in #80]<br />
+77	2.936963000	49.212.146.45	192.168.11.2	IPv4	770	Fragmented IP protocol (proto=ICMP 1, off=2224, ID=71f4) [Reassembled in #80]<br />
+78	2.936965000	49.212.146.45	192.168.11.2	IPv4	778	Fragmented IP protocol (proto=ICMP 1, off=2960, ID=71f4) [Reassembled in #80]<br />
+79	2.936966000	49.212.146.45	192.168.11.2	IPv4	770	Fragmented IP protocol (proto=ICMP 1, off=3704, ID=71f4) [Reassembled in #80]<br />
+80	2.936967000	49.212.146.45	192.168.11.2	ICMP	602	Echo (ping) reply    id=0x4b1c, seq=0/0, ttl=52  </p>
+
+<p>IPプロトコルのとしてフラグメンテーションが行われて分割されている事を確認した。</p>
+
+<p>またパケットは上記で送信パケットは私の送信する環境の最大である1514バイトを先頭から分割していっているが、返答パケットでは778バイトと770バイトが順番になって送信されていると初めて知りました。また、IPフラグメンテーションのオフセットでは前に送信したICMPプロトコルのデータサイズがセットされている事も確認した。
+また、送信パケットをもう少し見てみると、IPv4プロトコルのチェックサムが00 00となっており、送信元パケットではチェックサムが機能を行っていなかった。</p>
+
+<p>これは、送信時に全てのデータを確認してから処理しているのではなく、先頭から切って送信を行っているのでチェックサムの計算が出来ないからではないかと考える。</p>
+
+<p>返答パケットはパケットが8バイトの差はあっても均等にして返信されている事と、チェックサムが全て計算されている事から、すべてのデータを確認してから処理をしていると考える。</p>
+
+<h3 id="viihttphttps">vii）HTTPで動作しているサービスをHTTPSに変更することで起きうるデメリットを説明してください。</h3>
+<p>そのWebページの中でhttpを呼び出している所があると安全ではないリソースが含まれていると警告を出力される。</p>
+
+<p>SSLハンドシェイクや暗号化,復号化でWebページの表示速度が遅くなる。</p>
+
+<h3 id="viiipcap">viii）この応募用紙をダウンロードしたサーバのヘッダ情報をpcapファイルの中から抜き出して答えてください。</h3>
+<p>応募用紙のダウンロードを行なうパケットの応募用紙をGETするリクエストの応答のACKの次のパケットのHTTPのデータ部を取り出すと次のようになっている</p>
+
+<p>HTTP/1.1 200 OK<br />
+Date: Tue, 11 Nov 2014 08:06:38 GMT<br />
+Server: Apache/2.2.16 (Debian)<br />
+Last-Modified: Tue, 11 Nov 2014 08:04:32 GMT<br />
+ETag: “414f6-8fa-50790baaae400”<br />
+Accept-Ranges: bytes<br />
+Vary: Accept-Encoding<br />
+Content-Encoding: gzip<br />
+Content-Length: 1236<br />
+Connection: close<br />
+Content-Type: text/plain  </p>
+
+<p>(Blogに整形する所で微妙になったので省略)  </p>
+
+<p>この中のHTTPのヘッダ情報は</p>
+
+<p>HTTP/1.1 200 OK<br />
+Date: Tue, 11 Nov 2014 08:06:38 GMT<br />
+Server: Apache/2.2.16 (Debian)<br />
+Last-Modified: Tue, 11 Nov 2014 08:04:32 GMT<br />
+ETag: “414f6-8fa-50790baaae400”<br />
+Accept-Ranges: bytes<br />
+Vary: Accept-Encoding<br />
+Content-Encoding: gzip<br />
+Content-Length: 1236<br />
+Connection: close<br />
+Content-Type: text/plain  </p>
+
+<p>となり、これがこのファイルをダウンロードした時のサーバのヘッタ情報である。</p>
+
+<h2 id="section-4">☆ 記述式質問</h2>
+<p>記述質問は自分の考えなのでこっぱずかしいので要約して!</p>
+
+<h3 id="section-5">1. このクラスを希望した自分なりの理由を教えてください。また、この講義で学んだことを何に役立てたいかを教えてください。</h3>
+<p>ネットワークの技術に興味がありその技術を使用して自分で運用していくにはその技術を攻撃などから守る方法を知っていなければ的な事を書きかき。</p>
+
+<h3 id="section-6">2. あなたが今「一番興味がある」プロトコルはなんですか？またそのプロトコルのどのようなところに興味がありますか？</h3>
+<p>セキュリティとかにちょっと興味を持った切っ掛けがまっちゃ139勉強会での某浸透いうな先生だったのでそれも関連して、DNSに興味があります的な事を書き書き。</p>
+
+<h3 id="section-7">3. あなたの学校のネットワークを許可なくこっそり使って通信している人がいるかもしれません。 そういう心配が起こった時にあなたはどのような行動をとりますか。説明してください。</h3>
+<p>まず、その心配が起こった原因を探します。なぜ、学校のネットワークを使用している人が居るかもしれないと思ったのか、そしてその原因から他人が使用している事が判明すれば学校のネットワークを管理してる所に無許可で使用している人のログの確認、生徒教員への影響の確認その根本原因の究明などの対処を求めます。もし、原因が見つからなければそのような気がするのでという事を学校のネットワークを管理している所に行き調査をお願いする。</p>
+
+<h3 id="section-8">4. あるホームページを参照した際に表示が大変遅く感じました。この場合、原因として考えられる事象を説明してください。なお、想定される原因の数は多いほど望ましい。</h3>
+<p>Webページへのアクセスが増加している。</p>
+
+<p>サーバー上でのなんらかのプロセスがメモリリーク等を起こしている。</p>
+
+<p>サーバーのパッケージの自動アップデートが走っている。</p>
+
+<p>ホームページへアクセスしてる自分のネットワークが混雑している。</p>
+
+<p>ルータ等のネットワーク機器の不具合によるパケットロスが増加している。</p>
+
+<p>Webページ内に画像等の大きいファイルが存在する。</p>
+
+<p>重いJavaScriptが実行されている。</p>
+
+<p>サーバがDos攻撃などを受けている。</p>
+
+<p>ブラウザの不具合によりjavascriptなどの動作が重くなっている。</p>
+
+<p>とな感じに箇条書きで書き書き。</p>
+
+<h3 id="section-9">5. あなたがネットカフェで入手したとあるファイルをネットワーク経由であなたの自宅に安全に送付するための方法について解説してください。解説してある手法は多いほど望ましい。</h3>
+<p>scpを使用してファイルを転送する</p>
+
+<p>Dropbox等のローカルで暗号化を行なうタイプのファイル同期サービスを使用する</p>
+
+<p>みたいな感じに箇条書きで書き書き。</p>
+
+<h3 id="section-10">6. 興味を持っているプログラミング言語は何ですか？使ったことがあるプログラミング言語や愛用しているプログラミング言語について説明してください。</h3>
+<p>ここはもう、最近、好きなGo言語について書き書きしました。</p>
+
+<h3 id="section-11">7. 情報家電を１つ取り上げ、どんなプロトコルを使うか、サービスとして何が想定されるかを説明してください。また、その情報家電が悪用された場合、どのような脅威が想定されるか説明してください。</h3>
+<p>情報家電が何かちょっとよく分からなかったので、とりあえず、エアコンを想定して書き書き。</p>
+
+<p>どのような脅威が想定されるかは、外部からエアコンなどをコントロール出来れば、電力の消費量に大きく影響出来るので国家テロが出来る的な感じの事を書き書き。</p>
+
+<h3 id="section-12">8. 今一番注目しているネットワークプロトコルおよび実装について説明してください。また、そのネットワークプロトコルが悪用されてしまう可能性についても説明してください。</h3>
+<p>とりあえず、普通にHTTP2.0について書き書き</p>
+
+<p>悪用されてしまう可能性についての所は、必ずTLS上にコネクションを貼るので，こないだのOpenSSLの件があれば、標準化されている以上は多くの人が使う事になるので危険どあっぷ的な事を書き書き。</p>
+
+<h3 id="section-13">9. そのほかアピールしたいこと、書き足りないことがあれば自由に書いてください。</h3>
+<p>インターネットが好きだぞー! って書きました。</p>
+
+<h1 id="section-14">以上!!</h1>
+<p>まぁ、こんな感じで書けるだけ書きました。
+とりあえず、セキュリティ・ミニキャンプで手を動かせ!! 的な事を言われたのでとりあえず手を動かせるだけ、動かしてみましたっ</p>
+
+<p>来年以降、セキュリティ・キャンプが開催されるならそれに参加したい人の参考にでも成れば良いですねっ</p>
+
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li><a href="mailto:emxaser@bonprosoft.com">emxaser@bonprosoft.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col-2 column">
+      <ul>
+        <li>
+          <a href="https://github.com/kimitoboku">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username"></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/emaxser">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username"></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer-col-3 column">
+      <p class="text"></p>
+    </div>
+    
+  </div>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50842667-1', 'techack.net');
+  ga('send', 'pageview');
+
+  </script>
+</footer>
+
+
+    </body>
+</html>
