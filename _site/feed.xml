@@ -41,7 +41,7 @@ COMMANDS:
    help, h      Shows a list of commands or help for one command  
    
 GLOBAL OPTIONS:  
-   --root &quot;202.12.27.33&quot;        Root DNS Server's IP address  
+   --root &quot;202.12.27.33&quot;        Root DNS Server&#39;s IP address  
    --debug                      Debug Option for Developer [$false]  
    --fool                       Believe something like flue record [$false]  
    --help, -h                   show help  
@@ -195,11 +195,12 @@ Answer : 205.251.195.191=&amp;gt;
 &lt;p&gt;例えば&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;pre&gt;&lt;code&gt;    192.52.178.30=&amp;gt;  
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    192.52.178.30=&amp;gt;  
             dynect.net. -&amp;gt; ns2.dynamicnetworkservices.net.  
     Answer : 204.13.250.100=&amp;gt;  
             ns1.p31.dynect.net. -&amp;gt; 208.78.70.31  
 &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;でns2.dynamicnetworkservices.net.はdynect.net.の内部レコードでないのに次の行でアンサーがが返ってきています。これはグルーレコードのような物を信用した証です。嫌な世界ですね。&lt;/p&gt;
@@ -575,7 +576,7 @@ Rubyの開発はMatzの脳内にある最強の言語を取り出す作業らし
 root’s password:&lt;br /&gt;
 Enter username for &lt;em&gt;.&lt;/em&gt;.* :&lt;br /&gt;
 Enter password for hoge@&lt;em&gt;.&lt;/em&gt;.* :&lt;br /&gt;
-VPNC started in background (pid: 24438)…  &lt;/p&gt;
+VPNC started in background (pid: 24438)…&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;ここで大学基盤センターのアカウントのユーザ名とパスワードを入力する事で接続が完了します。&lt;/p&gt;
@@ -630,29 +631,29 @@ VPNC started in background (pid: 24438)…  &lt;/p&gt;
 &lt;p&gt;とりあえず。digってみます。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;% dig +norec @a.dns.jp tut.ac.jp  &lt;/p&gt;
+  &lt;p&gt;% dig +norec @a.dns.jp tut.ac.jp&lt;/p&gt;
 
   &lt;p&gt;; «» DiG 9.8.3-P1 «» +norec @a.dns.jp tut.ac.jp&lt;br /&gt;
 ; (2 servers found)&lt;br /&gt;
 ;; global options: +cmd&lt;br /&gt;
 ;; Got answer:&lt;br /&gt;
 ;; -»HEADER«- opcode: QUERY, status: NOERROR, id: 7574&lt;br /&gt;
-;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 1  &lt;/p&gt;
+;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 1&lt;/p&gt;
 
   &lt;p&gt;;; QUESTION SECTION:&lt;br /&gt;
-;tut.ac.jp.			IN	A  &lt;/p&gt;
+;tut.ac.jp.			IN	A&lt;/p&gt;
 
   &lt;p&gt;;; AUTHORITY SECTION:&lt;br /&gt;
 tut.ac.jp.		86400	IN	NS	dns-x.sinet.ad.jp.&lt;br /&gt;
-tut.ac.jp.		86400	IN	NS	ns0.tut.ac.jp.  &lt;/p&gt;
+tut.ac.jp.		86400	IN	NS	ns0.tut.ac.jp.&lt;/p&gt;
 
   &lt;p&gt;;; ADDITIONAL SECTION:&lt;br /&gt;
-ns0.tut.ac.jp.		86400	IN	A	133.15.2.24  &lt;/p&gt;
+ns0.tut.ac.jp.		86400	IN	A	133.15.2.24&lt;/p&gt;
 
   &lt;p&gt;;; Query time: 243 msec&lt;br /&gt;
 ;; SERVER: 203.119.1.1#53(203.119.1.1)&lt;br /&gt;
 ;; WHEN: Sat Dec 20 21:49:13 2014&lt;br /&gt;
-;; MSG SIZE  rcvd: 90  &lt;/p&gt;
+;; MSG SIZE  rcvd: 90&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;うちの大学のDNSコンテンツサーバはsinetと自分の所の二つに分かれてるっぽいですね。&lt;/p&gt;
@@ -662,35 +663,35 @@ ns0.tut.ac.jp.		86400	IN	A	133.15.2.24  &lt;/p&gt;
 &lt;p&gt;ついでに、imcもdigってみましょう。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;% dig +norec @ns0.tut.ac.jp. imc.tut.ac.jp  &lt;/p&gt;
+  &lt;p&gt;% dig +norec @ns0.tut.ac.jp. imc.tut.ac.jp&lt;/p&gt;
 
   &lt;p&gt;; «» DiG 9.8.3-P1 «» +norec @ns0.tut.ac.jp. imc.tut.ac.jp&lt;br /&gt;
 ; (1 server found)&lt;br /&gt;
 ;; global options: +cmd&lt;br /&gt;
 ;; Got answer:&lt;br /&gt;
 ;; -»HEADER«- opcode: QUERY, status: NOERROR, id: 593&lt;br /&gt;
-;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 3  &lt;/p&gt;
+;; flags: qr aa; QUERY: 1, ANSWER: 1, AUTHORITY: 3, ADDITIONAL: 3&lt;/p&gt;
 
   &lt;p&gt;;; QUESTION SECTION:&lt;br /&gt;
-;imc.tut.ac.jp.			IN	A  &lt;/p&gt;
+;imc.tut.ac.jp.			IN	A&lt;/p&gt;
 
   &lt;p&gt;;; ANSWER SECTION:&lt;br /&gt;
-imc.tut.ac.jp.		3600	IN	A	133.15.181.70  &lt;/p&gt;
+imc.tut.ac.jp.		3600	IN	A	133.15.181.70&lt;/p&gt;
 
   &lt;p&gt;;; AUTHORITY SECTION:&lt;br /&gt;
 imc.tut.ac.jp.		3600	IN	NS	ns0.imc.tut.ac.jp.&lt;br /&gt;
 imc.tut.ac.jp.		3600	IN	NS	ns1.imc.tut.ac.jp.&lt;br /&gt;
-imc.tut.ac.jp.		3600	IN	NS	server1.tut.ac.jp.  &lt;/p&gt;
+imc.tut.ac.jp.		3600	IN	NS	server1.tut.ac.jp.&lt;/p&gt;
 
   &lt;p&gt;;; ADDITIONAL SECTION:&lt;br /&gt;
 ns0.imc.tut.ac.jp.	3600	IN	A	133.15.2.28&lt;br /&gt;
 ns1.imc.tut.ac.jp.	3600	IN	A	133.15.20.28&lt;br /&gt;
-server1.tut.ac.jp.	43200	IN	A	133.15.254.1  &lt;/p&gt;
+server1.tut.ac.jp.	43200	IN	A	133.15.254.1&lt;/p&gt;
 
   &lt;p&gt;;; Query time: 279 msec&lt;br /&gt;
 ;; SERVER: 133.15.2.24#53(133.15.2.24)&lt;br /&gt;
 ;; WHEN: Sat Dec 20 22:07:23 2014&lt;br /&gt;
-;; MSG SIZE  rcvd: 153  &lt;/p&gt;
+;; MSG SIZE  rcvd: 153&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;あれ、こちらでは、ちょっとアレな所がありますね、erver1/.tut/.ac/.jp/.のIPアドレスがADDITIONAL SECTIONが付いています。このレコードとかなんとかならないですかね。&lt;/p&gt;
@@ -698,30 +699,30 @@ server1.tut.ac.jp.	43200	IN	A	133.15.254.1  &lt;/p&gt;
 &lt;p&gt;ついでに、csあたりもdigってみましょう。&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;% dig +norec @ns0.tut.ac.jp. cs.tut.ac.jp  &lt;/p&gt;
+  &lt;p&gt;% dig +norec @ns0.tut.ac.jp. cs.tut.ac.jp&lt;/p&gt;
 
   &lt;p&gt;; «» DiG 9.8.3-P1 «» +norec @ns0.tut.ac.jp. cs.tut.ac.jp&lt;br /&gt;
 ; (1 server found)&lt;br /&gt;
 ;; global options: +cmd&lt;br /&gt;
 ;; Got answer:&lt;br /&gt;
 ;; -»HEADER«- opcode: QUERY, status: NOERROR, id: 3654&lt;br /&gt;
-;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 2  &lt;/p&gt;
+;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 2&lt;/p&gt;
 
   &lt;p&gt;;; QUESTION SECTION:&lt;br /&gt;
-;cs.tut.ac.jp.			IN	A  &lt;/p&gt;
+;cs.tut.ac.jp.			IN	A&lt;/p&gt;
 
   &lt;p&gt;;; AUTHORITY SECTION:&lt;br /&gt;
 cs.tut.ac.jp.		43200	IN	NS	ns0.imc.tut.ac.jp.&lt;br /&gt;
-cs.tut.ac.jp.		43200	IN	NS	ns1.imc.tut.ac.jp.  &lt;/p&gt;
+cs.tut.ac.jp.		43200	IN	NS	ns1.imc.tut.ac.jp.&lt;/p&gt;
 
   &lt;p&gt;;; ADDITIONAL SECTION:&lt;br /&gt;
 ns0.imc.tut.ac.jp.	3600	IN	A	133.15.2.28&lt;br /&gt;
-ns1.imc.tut.ac.jp.	3600	IN	A	133.15.20.28  &lt;/p&gt;
+ns1.imc.tut.ac.jp.	3600	IN	A	133.15.20.28&lt;/p&gt;
 
   &lt;p&gt;;; Query time: 257 msec&lt;br /&gt;
 ;; SERVER: 133.15.2.24#53(133.15.2.24)&lt;br /&gt;
 ;; WHEN: Sat Dec 20 22:18:38 2014&lt;br /&gt;
-;; MSG SIZE  rcvd: 102  &lt;/p&gt;
+;; MSG SIZE  rcvd: 102&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;もう、これにいたってはもう、ADDITIONAL SECTIONに間違いしかないですね!!&lt;/p&gt;
@@ -883,7 +884,7 @@ ns1.imc.tut.ac.jp.	3600	IN	A	133.15.20.28  &lt;/p&gt;
   &lt;p&gt;cd $HOME/OneDrive&lt;br /&gt;
 mkdir Git-Repo.git&lt;br /&gt;
 cd Git-Repo.git&lt;br /&gt;
-git init –bare  &lt;/p&gt;
+git init –bare&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;こんな感じのコマンドでbareリポジトリ(裸のリポジトリ?)を作成します。&lt;/p&gt;
@@ -895,7 +896,7 @@ git init –bare  &lt;/p&gt;
 &lt;blockquote&gt;
 
   &lt;p&gt;cd $HOME/src&lt;br /&gt;
-git clone $HOME/OneDrive/Git-Repo.git  &lt;/p&gt;
+git clone $HOME/OneDrive/Git-Repo.git&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;ってな感じにすると$HOMEのsrcにGit-Repoが作成されます。こんなかでコードを書き書きしてaddしてcommitしてから&lt;/p&gt;
@@ -915,7 +916,7 @@ git clone $HOME/OneDrive/Git-Repo.git  &lt;/p&gt;
   &lt;p&gt;cd Project&lt;br /&gt;
 git init&lt;br /&gt;
 git remote add od $HOME/OneDrive/Work/研修プログラム.git&lt;br /&gt;
-git push od master  &lt;/p&gt;
+git push od master&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;みたいな感じで、odってリモートを追加して、pushでodに向けてmasterを投げ投げするって感じのコマンドです。&lt;/p&gt;

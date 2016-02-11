@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About</title>
+    <title>Pythonでロジスティック写像をかきかき</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
-    <link rel="canonical" href="http://blog.techack.net/about/">
+    <link rel="canonical" href="http://blog.techack.net/archive/2014/07/12/logisticsmapping-python-matplotlib">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -58,23 +58,43 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>About</h1>
+    <h1>Pythonでロジスティック写像をかきかき</h1>
+    <p class="meta">Jul 12, 2014</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="emaxser" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </header>
-
+  
   <article class="post-content">
-  <p>このページは適当に見つけた事を適当にメモしたり、適当に作った物とかを無責任に公開するためのページです</p>
+  <h1 id="section">ロジスティック写像</h1>
+<p>ロジスティック方程式<br />
+X(n+1) = a×X(n)×(1-X(n))<br />
+を用いてX(n)はn代における個体数を表わす値で、aは繁殖率(0から4)を表わします。<br />
+この式から、ある世代の個体数が分かれば、次の世代の個体数が計算出来ることより、この写像をx=a×x(1-x)のことをロジスティック写像というらしいです。<br />
+写像ってなんぞやってまぁ、ある集合の中の一つに対応する別の集合の要素みたいな感じで、函数みたいなイメージでいいです。</p>
 
-<p>得に理由もなく、適当に書いたり消したりするのであしからず</p>
+<h1 id="section-1">ロジスティック写像の動き</h1>
+<p>aが1以下の時にx(n)は0に収束<br />
+aが1より大きく3以下の時に1-(1/a)あたりに収束<br />
+aが3とり大きく3.5ちょいくらいの時に分割されていく感じで<br />
+それより大きいとよー分からん感じになります!!</p>
 
-<p>私は基本的にEmacsの事とか楽をする事しか考えてないのでそんな感じの内容ばっかりの可能性がたたあります</p>
+<p>まぁ、なんてこんな適当なのかと言いますと、自分でもよく分かってないからですね!! 大学の講義の中の課題なんだもん!!</p>
 
-<p>鯖を管理してるので、それに関係するセキュリティについての事などは興味があるのでそういうポストもあるかも</p>
+<h1 id="section-2">ロジスティック写像の分岐図を書きかき</h1>
+<p>とりあえず、課題でこれを書く感じの課題があったのでPythonのmatplotlibを使って書き書きします。<br />
+コードとしては次のような感じです。<br />
+<script src="https://gist.github.com/kimiboku/dade2aac7cbe81f134a1.js"></script>
+ループ回数とかは綺麗な感じに描画したくて調整した感じです。<br />
+まぁ、こんな感じの簡単なコードで次のような感じのグラフが表示されます。</p>
+<image src="http://blog.techack.net/image/logisticsmapping.png">
+一番左が1となってます、それより前は0になっちゃうので。
 
-<p><a href="http://bit.ly/emaxser">AmazonWishList</a></p>
+</image>
 
   </article>
 
 </div>
+
       </div>
     </div>
 

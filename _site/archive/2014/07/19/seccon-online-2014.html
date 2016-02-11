@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About</title>
+    <title>SECCONオンライン予選が全く出来なかった</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
-    <link rel="canonical" href="http://blog.techack.net/about/">
+    <link rel="canonical" href="http://blog.techack.net/archive/2014/07/19/seccon-online-2014">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -58,23 +58,37 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>About</h1>
+    <h1>SECCONオンライン予選が全く出来なかった</h1>
+    <p class="meta">Jul 19, 2014</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="emaxser" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </header>
-
+  
   <article class="post-content">
-  <p>このページは適当に見つけた事を適当にメモしたり、適当に作った物とかを無責任に公開するためのページです</p>
+  <p>タイトル通り、ぜんっぜん出来ませんでした&gt;&lt;</p>
 
-<p>得に理由もなく、適当に書いたり消したりするのであしからず</p>
+<p>とりあえず、解けた問題としてNWの100と暗合の100だけですってか、目視で解けるやつだけですね。</p>
 
-<p>私は基本的にEmacsの事とか楽をする事しか考えてないのでそんな感じの内容ばっかりの可能性がたたあります</p>
+<p>とりあえず、俺の解き方的な</p>
 
-<p>鯖を管理してるので、それに関係するセキュリティについての事などは興味があるのでそういうポストもあるかも</p>
+<h2 id="nw100seccon2014pcapng">NWの100のseccon2014.pcapng</h2>
+<p>とりあえず、Wireshakで開いて目視するとパスワード的なの?とかユーザー名?みたいなのが流れてくるけどとりあえず無視しまして、その後を見ていくとbase64っぽい文字列が見えたのでそれをデコードするとflag</p>
 
-<p><a href="http://bit.ly/emaxser">AmazonWishList</a></p>
+<h2 id="encodedtxt">暗合の100のencoded.txt</h2>
+<p>とりあえず、ファイルを開くと13/47って表示されてるのでrot13/47かなーと思って</p>
+
+<blockquote>
+  <p>nkf -rb encoded.txt</p>
+</blockquote>
+
+<p>ってやると答えが出てきました。</p>
+
+<p>となまぁ、こんな感じでぜんっぜん解けなかったのですが、目視以外でも解けるようになりたいなーと思ったので、ちょっと、CTFかなんかっぽい事やってみます&gt;&lt;</p>
 
   </article>
 
 </div>
+
       </div>
     </div>
 

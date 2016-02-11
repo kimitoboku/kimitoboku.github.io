@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About</title>
+    <title>クラウドストレージをgitのリポジトリに使う時のメモ</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
-    <link rel="canonical" href="http://blog.techack.net/about/">
+    <link rel="canonical" href="http://blog.techack.net/archive/2014/11/27/cloud-storage-git">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -58,23 +58,67 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>About</h1>
+    <h1>クラウドストレージをgitのリポジトリに使う時のメモ</h1>
+    <p class="meta">Nov 27, 2014</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="emaxser" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </header>
-
+  
   <article class="post-content">
-  <p>このページは適当に見つけた事を適当にメモしたり、適当に作った物とかを無責任に公開するためのページです</p>
+  <p>なんかバイトでプログラムを書く事になったのでバイト先ではgitは使ってないっぽいですけど、とりあえず、自分の中でソースコードがごたごたしないために適当にgitで管理しようかなーとか思ったのでそのためのメモです</p>
 
-<p>得に理由もなく、適当に書いたり消したりするのであしからず</p>
+<p>とりあえず、OneDrive上でやると仮定してやっていきます。</p>
 
-<p>私は基本的にEmacsの事とか楽をする事しか考えてないのでそんな感じの内容ばっかりの可能性がたたあります</p>
+<blockquote>
 
-<p>鯖を管理してるので、それに関係するセキュリティについての事などは興味があるのでそういうポストもあるかも</p>
+  <p>cd $HOME/OneDrive<br />
+mkdir Git-Repo.git<br />
+cd Git-Repo.git<br />
+git init –bare</p>
+</blockquote>
 
-<p><a href="http://bit.ly/emaxser">AmazonWishList</a></p>
+<p>こんな感じのコマンドでbareリポジトリ(裸のリポジトリ?)を作成します。</p>
+
+<p>bareリポジトリはまぁ、普通にgit initのコマンドを使った時にProject/.gitみたいな感じで存在するやつです。bareする時はディレクトリの名前の最後は.gitってしてあげて下さい。</p>
+
+<p>そんでもって、これから新しいプロジェクトを作成する時は</p>
+
+<blockquote>
+
+  <p>cd $HOME/src<br />
+git clone $HOME/OneDrive/Git-Repo.git</p>
+</blockquote>
+
+<p>ってな感じにすると$HOMEのsrcにGit-Repoが作成されます。こんなかでコードを書き書きしてaddしてcommitしてから</p>
+
+<blockquote>
+
+  <p>git push</p>
+</blockquote>
+
+<p>とかすると$HOME/OneDrive/Git-Repo.gitに更新などをプッシュ出来ます。
+クローンして来た時はデフォルトでpush先がクローンしてきたリポジトリになると思います</p>
+
+<p>そんでもって、既にある物をbareリポジトリにプッシュしたい時は次のコマンドで</p>
+
+<blockquote>
+
+  <p>cd Project<br />
+git init<br />
+git remote add od $HOME/OneDrive/Work/研修プログラム.git<br />
+git push od master</p>
+</blockquote>
+
+<p>みたいな感じで、odってリモートを追加して、pushでodに向けてmasterを投げ投げするって感じのコマンドです。</p>
+
+<p>まぁ、これはOneDriveでやってますけど、基本的にDropBoxでもなんでもクラウドストレージ系なら良いので適当な感じにプライベートなリポジトリを作っちゃいましょ</p>
+
+<p>私はOneDriveが最近、無料で30GBあるのでそれを使っちゃおうって感じに思ったのでOneDriveでやりました。</p>
 
   </article>
 
 </div>
+
       </div>
     </div>
 

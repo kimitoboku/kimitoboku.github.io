@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About</title>
+    <title>VPNCを使ってpcfファイルからVPN接続</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
-    <link rel="canonical" href="http://blog.techack.net/about/">
+    <link rel="canonical" href="http://blog.techack.net/archive/2015/08/07/How-To-VPNC">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -58,23 +58,75 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>About</h1>
+    <h1>VPNCを使ってpcfファイルからVPN接続</h1>
+    <p class="meta">Aug 7, 2015</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="emaxser" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </header>
-
+  
   <article class="post-content">
-  <p>このページは適当に見つけた事を適当にメモしたり、適当に作った物とかを無責任に公開するためのページです</p>
+  <p>Linuxから大学にVPNするのにVPNCを使えば簡単なのですがあんまり使ってる人を見ないのでとりあえず記事でも書いておこう。</p>
 
-<p>得に理由もなく、適当に書いたり消したりするのであしからず</p>
+<h2 id="vpnc">VPNC</h2>
+<p>VPNCは独自の設定ファイルからVPN接続を行うためのコマンドです。pcfファイルからその設定ファイルを作成するコマンドも付属している。</p>
 
-<p>私は基本的にEmacsの事とか楽をする事しか考えてないのでそんな感じの内容ばっかりの可能性がたたあります</p>
+<h2 id="vpnc-1">VPNCのインストール</h2>
 
-<p>鯖を管理してるので、それに関係するセキュリティについての事などは興味があるのでそういうポストもあるかも</p>
+<p>openSUSEではVPNCは公式リポジトリに存在するのでzypperコマンドでそのままインストールする事が出来ます。</p>
 
-<p><a href="http://bit.ly/emaxser">AmazonWishList</a></p>
+<blockquote>
+  <p>$ sudo zypper install vpnc</p>
+</blockquote>
+
+<h2 id="pcfconf">pcfファイルからconfファイルの生成</h2>
+<p>大学のVPN接続のpcfファイルは学内の情報メディア基盤センターのVPNのページからダウンロードする事が出来ます。</p>
+
+<p>TUT-IPSec.pcfからconfファイルを生成するには次のコマンドを使用します。</p>
+
+<blockquote>
+  <p>$ pcf2vpnc TUT-IPSec.pcf &gt; TUT-IPSec.conf</p>
+</blockquote>
+
+<p>このコマンドで生成する事が出来ます。</p>
+
+<h2 id="vpn">VPN接続</h2>
+<p>このconfファイルを使用して大学にVPN接続する事が出来ます。</p>
+
+<blockquote>
+  <p>$ sudo vpnc ./TUT-IPSec.conf<br />
+root’s password:<br />
+Enter username for <em>.</em>.* :<br />
+Enter password for hoge@<em>.</em>.* :<br />
+VPNC started in background (pid: 24438)…</p>
+</blockquote>
+
+<p>ここで大学基盤センターのアカウントのユーザ名とパスワードを入力する事で接続が完了します。</p>
+
+<p>VPNの切断は次のコマンドで行えます。</p>
+
+<blockquote>
+  <p>$ sudo vpnc-disconnect</p>
+</blockquote>
+
+<h2 id="vpn-1">ちょっとしたVPNの使い方</h2>
+<p>VPNで接続した状態であると、学内のLinuxサーバにsshで接続する事が出来ます。</p>
+
+<p>sshにはSOCKSプロキシを貼るための機能があります。</p>
+
+<p>という事で次のコマンドをVPN接続した状態で行います。</p>
+
+<blockquote>
+  <p>$ ssh -f -N -D 1080 [ID]@wlinux0.edu.tut.ac.jp</p>
+</blockquote>
+
+<p>[ID]となっている所に情報メディア基盤センターのアカウントを入れこのコマンドの後にパスワードを入れる事でSOCKSプロキシとして動作させる事が出来ます。</p>
+
+<p>あとはブラウザのプロキシ設定などでURLをlocalhost、ポートを1080とすると完全な学内専用のサービスにブラウザからアクセスする事が出来ます</p>
 
   </article>
 
 </div>
+
       </div>
     </div>
 

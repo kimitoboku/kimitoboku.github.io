@@ -4,10 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About</title>
+    <title>tchart.plでタイミングチャートかきかき</title>
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="">
-    <link rel="canonical" href="http://blog.techack.net/about/">
+    <link rel="canonical" href="http://blog.techack.net/archive/2014/05/10/timing-chart">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/main.css">
@@ -58,23 +58,64 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>About</h1>
+    <h1>tchart.plでタイミングチャートかきかき</h1>
+    <p class="meta">May 10, 2014</p>
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="emaxser" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </header>
-
+  
   <article class="post-content">
-  <p>このページは適当に見つけた事を適当にメモしたり、適当に作った物とかを無責任に公開するためのページです</p>
+  <h1 id="section">タイミングチャートかきかき</h1>
 
-<p>得に理由もなく、適当に書いたり消したりするのであしからず</p>
+<p>タイミングチャートをどーやって書こうかと悩んでぐぐったらtchart.plって物が見付かったので</p>
 
-<p>私は基本的にEmacsの事とか楽をする事しか考えてないのでそんな感じの内容ばっかりの可能性がたたあります</p>
+<h2 id="section-1">ダウンロード+α</h2>
 
-<p>鯖を管理してるので、それに関係するセキュリティについての事などは興味があるのでそういうポストもあるかも</p>
+<p>って言っても、<a href="http://www.mech.tohoku-gakuin.ac.jp/rde/contents/library/tchart/indexframe.html" title="タイミングチャート清書ツール tchart">こちらのページ</a>からOSのページに行き、ダウンロードするだけです。
+まぁ、めんどうなのでLinuxとかの人は次のコマンドを適当なディレクトリでやって下さいな。</p>
 
-<p><a href="http://bit.ly/emaxser">AmazonWishList</a></p>
+<blockquote>
+
+  <p>curl -O http://www.mech.tohoku-gakuin.ac.jp/rde/contents/library/tchart/tchart.pl<br />
+chmod +x tchart.pl</p>
+</blockquote>
+
+<p>wgetな人はcurl -Oの所をwgetにしちゃって下さいな</p>
+
+<h2 id="section-2">使い方</h2>
+
+<p>使い方はまぁ、簡単でとりあえずタイミングチャートにしたい物をを作ります、作り方は見たらわかるので、まぁ、こんな感じです。</p>
+
+<blockquote>
+
+  <p>A  <strong>~</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__<br />
+P  <em>~</em></strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__<br />
+X  __</strong><em>~</em><strong>~</strong><em>~</em><strong>~</strong><em>~</em><strong>~</strong><em>~</em>__<br />
+Q3 <strong>__</strong><strong>__</strong><em>~~~~</em><strong>__</strong><strong>__<em>~~~~<br />
+Q2 __</em></strong><strong>__~~~~</strong><strong>__</strong><strong>__~~~~</strong>__<br />
+Q1 <strong>__<em>~~~~</em></strong><strong>__</strong><strong><em>~~~~</em></strong><strong>___<br />
+Q0 <em>~~~~</em></strong><strong>__</strong><strong><em>~~~~</em></strong><strong>__</strong>___</p>
+</blockquote>
+
+<p>これれを適当に保存します。
+そして次のコマンドを実行します。</p>
+
+<p><code class="highlighter-rouge">shell
+./tchart.pl &lt;保存file名&gt; &lt;出力名&gt;.eps
+</code></p>
+
+<p>そうすると、こんな感じに出来ます。</p>
+
+<p><img src="http://blog.techack.net/image/ring_pulse.png" alt="タイミングチャート" title="ring_pulse.png" /></p>
+
+<h2 id="section-3">まとめ?</h2>
+
+<p>まぁ、こんな感じに簡単に作れるって分かったので、さっさとレポートとか書きましょ</p>
 
   </article>
 
 </div>
+
       </div>
     </div>
 
