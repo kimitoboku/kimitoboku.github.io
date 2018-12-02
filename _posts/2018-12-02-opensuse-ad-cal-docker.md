@@ -1,7 +1,7 @@
 ---
 layout: post
 title: openSUSEでDockerをインストールして．YaSTでアタッチまで
-date: 2018-10-31
+date: 2018-12-02
 tags: [openSUSE, Docker]
 categorise: 雑多
 ---
