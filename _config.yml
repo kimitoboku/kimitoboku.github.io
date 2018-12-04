@@ -1,4 +1,5 @@
 # Site settings
+theme: hacker
 title: あの忘れえぬ日々 そのために今生きている
 email: emxaser@bonprosoft.com
 url: "http://blog.techack.net"
@@ -8,7 +9,6 @@ author :
   email : emaxser@bonprosoft.com
 github: kimiboku
 google_analytics: UA-21221719-2
-theme: Hacker
 
 
 # Build settings
