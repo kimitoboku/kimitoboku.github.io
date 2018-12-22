@@ -1,8 +1,8 @@
 ---
 layout: post
-title: openSUSEでDropboxを使う
-date: 2018-12-13
-tags: [openSUSE, Dropbox]
+title: Rust製のアプリケーションをパッケージング
+date: 2018-12-23
+tags: [openSUSE, RUst, OBS, rpm]
 categorise: 雑多
 ---
 
