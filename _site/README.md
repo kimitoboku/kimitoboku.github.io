@@ -1,1 +1,0 @@
-# kimitoboku.github.io
