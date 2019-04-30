@@ -4,8 +4,10 @@ layout: default
 <div class="post">
 
   <header>
-    <font color="white"><h1>{{ page.title }}</h1></font>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <div class="inner">
+      <h1>{{ page.title }}</h1>
+      <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    </div>
   </header>
 
   <article class="post-content">
