@@ -2,7 +2,7 @@
 layout: post
 title: Rust製のアプリケーションをパッケージング
 date: 2018-12-23
-tags: [openSUSE, RUst, OBS, rpm]
+tags: [openSUSE, Rust, OBS, rpm]
 categorise: 雑多
 ---
 
@@ -143,7 +143,7 @@ rm %{buildroot}%{_prefix}/.crates.toml
 %files
 %defattr(-,root,root)
 %doc LICENSE README.md
-%{_bindir}/hexrpmdev-newspec 
+%{_bindir}/hexrpmdev-newspec
 
 ```
 
