@@ -54,6 +54,7 @@ gmysql-host=127.0.0.1
 gmysql-user=power_admin
 gmysql-password=password
 gmysql-dbname=powerdns
+$ sudo systemctl start pdns
 ```
 これで，PowerDNSをMySQLバックエンドで起動することが出来ました．
 
