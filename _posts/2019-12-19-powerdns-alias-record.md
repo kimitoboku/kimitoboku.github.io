@@ -1,6 +1,6 @@
 ---
 layout: post
-title: openSUSEでnetboxをインストール
+title: PowerDNSのALIASレコードについて
 date: 2019-12-19
 tags: [Network, DNS, openSUSE]
 categorise: Network, DNS
