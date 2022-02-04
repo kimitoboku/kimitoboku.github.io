@@ -1,7 +1,7 @@
 # Site settings
-theme: jekyll-theme-architect
+theme: jekyll-theme-minimal
 title: あの忘れえぬ日々 そのために今生きている
-email: emxaser@bonprosoft.com
+email: kimitoboku@techack.net
 url: "http://blog.techack.net"
 encoding: utf-8
 author :
