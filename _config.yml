@@ -1,12 +1,11 @@
 # Site settings
 theme: minima
 title: あの忘れえぬ日々 そのために今生きている
-email: kimitoboku@techack.net
 url: "http://blog.techack.net"
 encoding: utf-8
 author :
   name : Kawakami Kento
-  email : emaxser@bonprosoft.com
+  email: kimitoboku@techack.net
 github: kimiboku
 google_analytics: UA-21221719-2
 
