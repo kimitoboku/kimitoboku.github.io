@@ -11,7 +11,10 @@ layout: default
 <ul class="posts">
 {% for post in paginator.posts %}
   {% unless post.draft %}
-    <li><a href="{{site.baseurl}}{{ post.url }}"><span class="title">{{ post.title }}</span> <span class="date"> - {{post.date| date: "%b %Y"}}</span><span class="excerpt">{{ post.excerpt | strip_html | truncatewords:50 }}</span></a></li>
+    <li><a href="{{site.baseurl}}{{ post.url }}"><span class="title">{{ post.title }}</span></a><br>
+    <span class="date"> - {{post.date| date: "%b %Y"}}</span><br>
+    <span class="excerpt">{{ post.content | strip_html | truncatewords:50 }}</span><br>
+    </li>
   {% endunless %}
 {% endfor %}
 </ul>
