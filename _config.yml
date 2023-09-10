@@ -13,3 +13,9 @@ google_analytics: UA-21221719-2
 # Build settings
 markdown: kramdown
 permalink: /archive/:year/:month/:day/:title
+
+paginate: 10
+paginate_path: /page/:num
+gems:
+- jekyll-sitemap
+- jekyll-paginate
