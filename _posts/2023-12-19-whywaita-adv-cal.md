@@ -8,7 +8,11 @@ categorise: 雑多
 
 初めての方は初めまして。
 そうでないかたもほぼほぼ初めまして。
-TODO: 昨日の人の記事について書く
+
+この記事は [whywaita Advent Calendar 2023](https://adventar.org/calendars/8553)の19日目の記事です。
+昨日はIzacchi16-sanの [Flutterアプリでwhywaitaアイコン回してみた - Izacchi16のブログ](https://izacchi16.hatenablog.jp/entry/2023/12/18/201418) でした。
+Whywaitaは基本的に回されがちなイメージがありますね。
+
 whywaita advent calendarのために4年ぶりにBlogを再開してみたので、Blogが継続出来ると良いですね。
 
 Whywaitaには、健やかに働いて欲しい気持ちでいっぱいの今日この頃です。
@@ -258,3 +262,5 @@ Lua Recordsで使える仕様などについては、PowerDNSのドキュメン�
 PowerDNSのLua Recordsという機能を使って、応答を操作する機能の紹介を行いました。
 Lua Recordsを使う事で柔軟にレコードの応答を操作する事で、GSLBとして利用する事が出来ます。
 OSSのGSLBの実装としては、最も使われている物の一つではあると思うので、便利に使える機会には使ってみても良いのではないでしょうか。
+
+明日は、papix-sanの記事です。
