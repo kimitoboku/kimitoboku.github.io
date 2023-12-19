@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Whywitaに健やかに働いて貰うためにPowerDNSでGSLBっぽい事をする
+title: Whywaitaに健やかに働いて貰うためにPowerDNSでGSLBっぽい事をする
 date: 2023-12-19
 tags: [雑多, 映画]
 categorise: 雑多
@@ -155,7 +155,9 @@ $ for i in $(seq 1 1000); do; dig @localhost -p 15353 random.example.com +short;
 とりあえず、データを変更してこの重みがどうなるのか、確認してみましょう。
 Zonefileの `random` の行を以下のように変更してみます。
 ```
+{% raw %}
 random       IN      LUA    A "pickwrandom({ {1, '1.2.3.4'}, {100, '4.3.2.1'} })"
+{% endraw %}
 ```
 PowerDNSの設定で、`bind-check-interval=1` という設定を行って居るので、1秒間に1回Zonefileに変更があればreloadされます。
 また、動作確認をしてみましょう。
@@ -170,7 +172,9 @@ $ for i in $(seq 1 1000); do; dig @localhost -p 15353 random.example.com +short;
 Lua Recordsでは [view関数](https://doc.powerdns.com/authoritative/lua-records/functions.html#view)を利用する事で、ClientのSrc IP Rangeを用いて応答を変更する事が出来ます。
 以下のようにレコードを作成出来ます。
 ```
+{% raw %}
 src          IN      LUA    A "view({{{'192.168.0.0/16'}, {'192.168.1.54'}}, {{'0.0.0.0/0'}, {'192.0.2.1'}}})"
+{% endraw %}
 ```
 このレコードはリクエストのSrc IPが `192.168.0.0/16` のRange内の場合には、 `192.168.1.54` を返し、それ以外の場合には `192.0.2.1` を返します。
 とりあえず、Docker Containerの外と中で問い合わせを行ってみましょう。
@@ -230,7 +234,9 @@ src.example.com.        86400   IN      A       192.0.2.1
 また、Luaのソースコードなので、Randmonと組み合わせる事も出来ます。
 
 ```
+{% raw %}
 src-rand     IN      LUA    A "view({{{'192.168.0.0/16'}, {pickwrandom({{1, '1.2.3.4'}, {1, '1.2.3.5'}})}}, { {'0.0.0.0/0'}, { pickwrandom({ {1, '4.3.2.1'}, {1, '4.3.2.2'}})}}})"
+{% endraw %}
 ```
 
 動作確認してみましょう。
