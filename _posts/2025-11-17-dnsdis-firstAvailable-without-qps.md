@@ -7,8 +7,9 @@ categorise: DNS
 ---
 
 > ### `firstAvailable`[](https://www.dnsdist.org/guides/serverselection.html#firstavailable "Permalink to this headline")
-
+>
 >The `firstAvailable` policy, picks the first available server that has not exceeded its QPS limit, ordered by increasing ‘order’. If all servers are above their QPS limit, a server is selected based on the `leastOutstanding` policy. For now this is the only policy using the QPS limit.
+>
 > [Loadbalancing and Server Policies](https://www.dnsdist.org/guides/serverselection.html)
 
 QPSを使って、一番最初の可用性の高いDNSにbalancingするよと書かれているが、QPSがない場合だったりだとか、それがどう動作するのかについては書かれてないので確認する。
@@ -86,7 +87,7 @@ std::optional<ServerPolicy::SelectedServerPosition> firstAvailable(const ServerP
 ```
 
 - firstAvailableはqpsが許可される最初の物を利用する(serverがsortされているのでorder順番 or 追加順で前から選ばれる)
-- [https://github.com/PowerDNS/pdns/blob/master/pdns/dnsdistdist/dnsdist-lbpolicies.cc#L83-L91](https://github.com/PowerDNS/pdns/blob/master/pdns/dnsdistdist/dnsdist-lbpolicies.cc#L83-L91)
+- [https://github.com/PowerDNS/pdns/blob/52db76c3cb35de55f9a598d897eeb3938c92707b/pdns/dnsdistdist/dnsdist-lbpolicies.cc#L83-L91](https://github.com/PowerDNS/pdns/blob/52db76c3cb35de55f9a598d897eeb3938c92707b/pdns/dnsdistdist/dnsdist-lbpolicies.cc#L83-L91)
 - `!server.second->d_qpsLimiter` の動作しだいで、qpsが定義されていなかったら、常にtrueになりそう
     
 
