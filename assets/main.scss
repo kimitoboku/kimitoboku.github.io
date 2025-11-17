@@ -96,3 +96,7 @@
   }
 }
 
+/* index（home-wide）だけ wrapper の幅を広げる */
+.home-wide .wrapper {
+  max-width: 1200px;  /* 好きな幅に変更 */
+}
