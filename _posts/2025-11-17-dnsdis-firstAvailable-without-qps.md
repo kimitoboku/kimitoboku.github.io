@@ -106,10 +106,10 @@ public:
 
 - https://github.com/PowerDNS/pdns/blob/652d49ede7486a0472ee52a99b7dc9769c7b4931/pdns/dnsdistdist/dnsdist.hh#L713
 -  `optional` を使っている
-  - optionalなので、noneの場合はfalseになる
-  - [optional - cpprefjp C++日本語リファレンス](https://cpprefjp.github.io/reference/optional/optional.html)
-  - https://cpprefjp.github.io/reference/optional/nullopt_t.html
-  - nulloptになり、これは有効な値ではないのでfalseになる
+    - optionalなので、noneの場合はfalseになる
+    - [optional - cpprefjp C++日本語リファレンス](https://cpprefjp.github.io/reference/optional/optional.html)
+    - https://cpprefjp.github.io/reference/optional/nullopt_t.html
+    - nulloptになり、これは有効な値ではないのでfalseになる
 - なので、`(!server.second->d_qpsLimiter || server.second->d_qpsLimiter->checkOnly())` はqpsのlimitが設定されていなければ常にTrue
 
 
