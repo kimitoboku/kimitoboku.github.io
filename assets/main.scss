@@ -96,7 +96,10 @@
   }
 }
 
-/* index（home-wide）だけ wrapper の幅を広げる */
-.home-wide .wrapper {
-  max-width: 1200px;  /* 好きな幅に変更 */
+
+.wrapper {
+  max-width: 100% !important;   /* デフォルトの 800px を解除 */
+  padding-left: 1.5rem;         /* 必要なら余白調整 */
+  padding-right: 1.5rem;
 }
+
