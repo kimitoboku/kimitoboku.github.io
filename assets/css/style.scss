@@ -2,3 +2,120 @@
 ---
 
 @import "{{ site.theme }}";
+
+/* タイル型グリッドレイアウト */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* カード本体 */
+.post-card {
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  transition:
+    transform 0.15s ease-out,
+    box-shadow 0.15s ease-out,
+    border-color 0.15s ease-out,
+    background-color 0.15s ease-out;
+}
+
+.post-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+
+/* minima の本文幅に合わせてちょい広め */
+.post-card-body {
+  padding: 1.1rem 1.2rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* hover 時の少しだけ浮く演出 */
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+/* タイトルは minima の .post-link っぽく */
+.post-card-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* 日付: minima の .post-meta を再利用 */
+.post-meta {
+  margin: 0.15rem 0 0.1rem;
+  font-size: 0.8rem;
+}
+
+/* タグ表示 */
+.post-card-tags {
+  list-style: none;
+  margin: 0.1rem 0 0.1rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.post-card-tag {
+  font-size: 0.75rem;
+  padding: 0.08rem 0.55rem;
+  border-radius: 999px;
+  background-color: #f2f4f8;
+  color: #555;
+}
+
+/* 抜粋 */
+.post-card-excerpt {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* スマホ用微調整 */
+@media (max-width: 600px) {
+  .post-grid {
+    gap: 1.1rem;
+  }
+
+  .post-card-body {
+    padding: 0.9rem 0.95rem 0.95rem;
+  }
+}
+
+/* ダークモード対応（minima の色に寄せ気味） */
+@media (prefers-color-scheme: dark) {
+  .post-card {
+    background-color: #111827;
+    border-color: rgba(148, 163, 184, 0.35);
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.7);
+  }
+
+  .post-card:hover {
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.95);
+  }
+
+  .post-card-tag {
+    background-color: #1f2937;
+    color: #e5e7eb;
+  }
+
+  .post-card-excerpt {
+    color: #e5e7eb;
+  }
+}
+
+
