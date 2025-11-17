@@ -6,13 +6,15 @@ tags: [DNS, Network]
 categorise: DNS
 ---
 
+QPSを使って、一番最初の可用性の高いDNSにbalancingするよと書かれているが、QPSがない場合だったりだとか、それがどう動作するのかについては書かれてないので確認する。
+
 > ### `firstAvailable`[](https://www.dnsdist.org/guides/serverselection.html#firstavailable "Permalink to this headline")
 >
 >The `firstAvailable` policy, picks the first available server that has not exceeded its QPS limit, ordered by increasing ‘order’. If all servers are above their QPS limit, a server is selected based on the `leastOutstanding` policy. For now this is the only policy using the QPS limit.
 >
 > [Loadbalancing and Server Policies](https://www.dnsdist.org/guides/serverselection.html)
 
-QPSを使って、一番最初の可用性の高いDNSにbalancingするよと書かれているが、QPSがない場合だったりだとか、それがどう動作するのかについては書かれてないので確認する。
+公式の、docにはQPSの定義がserverにない時の動作は未記載だった。
 
 とりあえず、試したら期待通りに(最初に登録したやつがDownしたら次のやつにトラヒックが流れる形で)動いたCode
 
