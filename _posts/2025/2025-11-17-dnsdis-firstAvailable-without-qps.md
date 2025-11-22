@@ -1,6 +1,6 @@
 ---
 layout: post
-title: dnsdistのfirstAvailableがqps指定さされてない時にどう動くのか
+title: dnsdistのfirstAvailableがqps指定されてない時にどう動くのか
 date: 2025-11-17
 tags: [DNS, Network]
 categorise: DNS
