@@ -2,7 +2,7 @@
 layout: post
 title: devcontainer/cliが便利だったので普段の開発環境にこれを使っても良いかもしれない
 date: 2025-12-14
-tags: [Linux, Container, Docker]
+tags: [Linux, container, Docker]
 categorise: Linux
 ---
 
