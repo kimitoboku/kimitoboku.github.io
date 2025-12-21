@@ -1,12 +1,12 @@
 ---
 layout: post
-title: PodmanがDefaultのDNSでは8.8.8.8を使う
+title: Podmanがresolv.confをうまく読み込めなかったらDefaultのDNSでは8.8.8.8を使う
 date: 2025-12-21
 tags: [Linux, container, podman]
 categorise: Linux
 ---
 
-PodmanのDNS設定はdefaultで8.8.8.8(Google Public DNS)を利用するらしい。
+PodmanのDNS設定はDNSの設定を読みとれたり出来なかった場合は、defaultで8.8.8.8(Google Public DNS)を利用するらしい。
 
 ```go
 var (
