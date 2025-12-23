@@ -11,8 +11,8 @@ categorise: 雑多
 
 <iframe src="https://adventar.org/calendars/11433/embed" width="620" height="362" frameborder="0" loading="lazy"></iframe>
 
-昨日は nersonu -sanの記事でした。
-まだ見ぬ面白い記事だと思います。
+昨日は nersonu -sanの [15〜20？年ぶりくらいに志摩スペイン村に行きました](https://nersonu.hatenablog.com/entry/whywaita-advent-calendar-2025) でした。
+志摩スペイン村、日はCMしか知らないのでちょっと行ってみたいですね。
 
 whywaita Advent Calendarも10周年おめでとう御座います。
 10周年ということで、毎年 n+1 周年と、単調に増えていいますね。
