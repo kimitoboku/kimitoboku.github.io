@@ -12,11 +12,12 @@ categorise: 雑多
 <iframe src="https://adventar.org/calendars/11433/embed" width="620" height="362" frameborder="0" loading="lazy"></iframe>
 
 昨日は nersonu -sanの [15〜20？年ぶりくらいに志摩スペイン村に行きました](https://nersonu.hatenablog.com/entry/whywaita-advent-calendar-2025) でした。
-志摩スペイン村、日はCMしか知らないのでちょっと行ってみたいですね。
+志摩スペイン村、自分はCMしか知らないのでちょっと行ってみたいですね。
+関西からだと比較的行きやすそうなので小旅行に良さそうです。
 
 whywaita Advent Calendarも10周年おめでとう御座います。
-10周年ということで、毎年 n+1 周年と、単調に増えていいますね。
-つまり、20周年もあるし、30周年もあるという事です。
+10周年ということで、毎年 n+1 周年と、単調に増えていっていますね。
+つまり、数学的帰納法によると、20周年もあるし、30周年もあるという事です。
 そして、すこしnを大きくすると1万周年もあるという事ですね。
 そしてWhywaita Advent Calendarがあるという事は、きっと、Whywaitaも永遠なのでしょう。
 
