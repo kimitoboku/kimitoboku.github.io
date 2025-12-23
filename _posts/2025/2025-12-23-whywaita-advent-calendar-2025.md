@@ -85,7 +85,7 @@ whywaita Advent Calendarも10周年おめでとう御座います。
 その結果、8羽中6羽の糞から合計18個の無傷な卵が回収され、そのうち12個に胚の生存が確認されました。
 そして最終的にコイ1個とブナ2個の卵が孵化したとレポートされています。
 
-さらに、2024年に、メダカやコイ、フナだけではなく他の種類の魚類もマガモ類に食べさせた実験が報告されています。
+さらに、2024年に、メダカやコイ、フナだけではなく他の種類の魚類もマガモ類に食べさせた実験が報告されています[^Lovas2024]。
 この実験では、9目9科の魚類の卵をマガモ類に食べさせて糞を確認するという実験を行いました。
 この結果、5種の卵の生存が確認され、そのなかからさらに2種の卵が羽化しました。
 これにより、魚の卵が消化されずに水鳥により散布されるというのは一部の魚類の特権ではない事が示唆されています。
@@ -107,12 +107,15 @@ whywaita Advent Calendarも10周年おめでとう御座います。
 ぜひ確かめて下さい。
 
 最近は情報科学よりも動物の生態に興味があります。
-3月に [日本生態学会] (https://esj-meeting.net/home/) の大会が京都であるみたいです。
+3月に [日本生態学会](https://esj-meeting.net/home/)lの大会が京都であるみたいです。
 丁度、11月に京都に引越した所なので、ちょっと予定を確保して参加したい所です。
 
 明日は karamaru -sanです。
+
+ーーー
 
 [^Sliva2019]: Killifish eggs can disperse via gut passage through waterfowl https://doi.org/10.1002/ecy.2774
 [^Lovas2020]: Experimental evidence of dispersal of invasive cyprinid eggs inside migratory waterfowl https://doi.org/10.1073/pnas.2004805117
 [^Lovas2024]: Bird‐mediated endozoochory as a potential dispersal mechanism of bony fishes https://doi.org/10.1111/ecog.07124
 [^Yao2024]: Passive dispersal potential of medaka eggs by attaching to waterbirds https://doi.org/10.1007/s00114-024-01935-3
+
