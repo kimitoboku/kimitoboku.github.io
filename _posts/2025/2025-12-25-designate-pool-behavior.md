@@ -65,7 +65,7 @@ Poolの割り当てはDesignateのPool schedulerによって行なわれる。
 - [designate/scheduler/filters/default_pool_filter.py#L41](https://github.com/openstack/designate/blob/7c785e72c3936d89531a8866384f19172b1e1111/designate/scheduler/filters/default_pool_filter.py#L41)
     - configに書いてあるdefaultを利用する。
 
-config中にfilterが指定してあれば、そのScheudlerを利用出来る。
+config中にfilterが指定してあれば、その[Pool Scheudler Filter](https://docs.openstack.org/designate/latest/admin/pool-scheduler.html)を利用出来る。
 
 ```conf
 [service:central]
