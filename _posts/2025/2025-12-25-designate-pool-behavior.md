@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenStack DesignateでPoolの値を更新したらどのように反映されるのか。
+title: OpenStack DesignateでPoolの値を更新したらどのようにZoneに反映されるのか
 date: 2025-12-25
 tags: [OpenStack, Designate, DNS]
 categorise: OpenStack
