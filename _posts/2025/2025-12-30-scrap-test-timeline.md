@@ -62,3 +62,13 @@ docker compose up -d
 残ったタスク
 - [ ] もうちょっと記事を増やしてみる
 - [ ] Layoutでfilterとか出来たりすると良いかもしれない
+
+--- 
+
+## 2025-12-30 12:48 - index.htmlをちょっと修正
+
+index.htmlに最初のセクションのh1しか表示されなかったので修正
+
+```
+index.htmlにlayoutがscrapだった場合に各分割secionの h1 をリスト表示に数件程度表示させる事は出来ますか?
+```
