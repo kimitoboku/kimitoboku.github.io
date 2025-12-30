@@ -44,7 +44,14 @@ layout: default
         <div class="timeline-entry">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            {% assign cleaned = section | remove_first: ' />' | remove_first: '/>' %}
+            {% assign section_start = section | slice: 0, 3 %}
+            {% if section_start == ' />' %}
+              {% assign cleaned = section | remove_first: ' />' %}
+            {% elsif section_start contains '/>' %}
+              {% assign cleaned = section | remove_first: '/>' %}
+            {% else %}
+              {% assign cleaned = section %}
+            {% endif %}
             {{ cleaned }}
           </div>
         </div>
