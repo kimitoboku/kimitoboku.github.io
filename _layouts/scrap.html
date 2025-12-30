@@ -26,6 +26,14 @@ layout: default
         {% endif %}
       </span>
     </p>
+    <ul class="post-meta-tags">
+      <li class="post-meta-layout-label">scrap</li>
+      {%- if page.tags -%}
+        {%- for tag in page.tags -%}
+          <li><a href="{{ '/tags/#tag_' | append: tag | relative_url }}" class="post-meta-tag">#{{ tag }}</a></li>
+        {%- endfor -%}
+      {%- endif -%}
+    </ul>
   </header>
 
   <div class="scrap-timeline">

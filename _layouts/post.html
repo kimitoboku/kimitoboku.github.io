@@ -13,6 +13,14 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}
     </p>
+    <ul class="post-meta-tags">
+      <li class="post-meta-layout-label">post</li>
+      {%- if page.tags -%}
+        {%- for tag in page.tags -%}
+          <li><a href="{{ '/tags/#tag_' | append: tag | relative_url }}" class="post-meta-tag">#{{ tag }}</a></li>
+        {%- endfor -%}
+      {%- endif -%}
+    </ul>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">

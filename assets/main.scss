@@ -202,6 +202,48 @@
   text-transform: capitalize;
 }
 
+/* =====================================================
+   記事詳細ページ用: タグ表示
+   ===================================================== */
+
+.post-meta-tags {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.post-meta-layout-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+  text-transform: capitalize;
+}
+
+.post-meta-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background-color: #f2f4f8;
+  color: #555;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.post-meta-tag:hover {
+  background-color: #e2e8f0;
+  color: #333;
+  text-decoration: none;
+}
+
 /* Scrapセクションプレビュー（トップページカード用） */
 .scrap-sections-preview {
   list-style: none;

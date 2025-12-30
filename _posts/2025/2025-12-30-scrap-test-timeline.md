@@ -1,6 +1,8 @@
 ---
 title: ScrapをClaude codeくんに実装してもらったのでテスト
 layout: scrap
+tags: [雑多]
+categorise: 雑多
 date: 2025-12-30
 start_date: 2025-12-30
 end_date: 2025-12-30
