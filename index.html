@@ -7,7 +7,16 @@ layout: default
     <article class="post-card">
       <a class="post-card-link" href="{{ post.url | relative_url }}">
         <div class="post-card-body">
-          <h2 class="post-card-title">{{ post.title }}</h2>
+          <h2 class="post-card-title">
+            {% if post.start_date %}
+              {% if post.end_date %}
+                <span class="status-badge status-done">DONE</span>
+              {% else %}
+                <span class="status-badge status-wip">WIP</span>
+              {% endif %}
+            {% endif %}
+            {{ post.title }}
+          </h2>
 
           {% if post.date %}
           <p class="post-meta">
@@ -17,13 +26,14 @@ layout: default
           </p>
           {% endif %}
 
-          {% if post.tags and post.tags.size > 0 %}
           <ul class="post-card-tags">
-            {% for tag in post.tags %}
-              <li class="post-card-tag">#{{ tag }}</li>
-            {% endfor %}
+            <li class="post-card-layout-label">{{ post.layout }}</li>
+            {% if post.tags and post.tags.size > 0 %}
+              {% for tag in post.tags %}
+                <li class="post-card-tag">#{{ tag }}</li>
+              {% endfor %}
+            {% endif %}
           </ul>
-          {% endif %}
 
           <p class="post-card-excerpt">
             {% if post.excerpt %}

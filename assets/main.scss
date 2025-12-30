@@ -103,3 +103,294 @@
   padding-right: 1.5rem;
 }
 
+/* SNSシェアボタン */
+.post-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.share-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.share-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.twitter-share {
+  background-color: #1DA1F2;
+  color: #fff;
+}
+
+.twitter-share:hover {
+  background-color: #1a8cd8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+}
+
+.hatena-share {
+  background-color: #00A4DE;
+  color: #fff;
+}
+
+.hatena-share:hover {
+  background-color: #0090c5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 164, 222, 0.3);
+}
+
+/* スマホ用調整 */
+@media (max-width: 600px) {
+  .share-buttons {
+    flex-direction: column;
+  }
+
+  .share-button {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   SCRAP機能: ステータスバッジ・レイアウトラベル
+   ===================================================== */
+
+/* ステータスバッジ (WIP/DONE) */
+.status-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+}
+
+.status-wip {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.status-done {
+  background-color: #d1fae5;
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+/* レイアウトラベル（トップページカード用） */
+.post-card-layout-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  border: 1px solid #c7d2fe;
+  text-transform: capitalize;
+}
+
+/* =====================================================
+   SCRAP レイアウト: タイムラインスタイル
+   ===================================================== */
+
+.scrap {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.scrap-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.scrap-title {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.scrap-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.scrap-date-range {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.date-separator {
+  color: #999;
+}
+
+.ongoing-indicator {
+  color: #f59e0b;
+  font-style: italic;
+}
+
+/* タイムラインコンテナ */
+.scrap-timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+
+/* 縦線 */
+.scrap-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #3b82f6, #60a5fa);
+  border-radius: 3px;
+}
+
+/* タイムラインエントリ */
+.timeline-entry {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timeline-entry:last-child {
+  padding-bottom: 0;
+}
+
+/* タイムラインマーカー（ドット） */
+.timeline-marker {
+  position: absolute;
+  left: -1.65rem;
+  top: 0.5rem;
+  width: 14px;
+  height: 14px;
+  background-color: #3b82f6;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  z-index: 1;
+}
+
+/* 最初のエントリは大きなマーカー */
+.timeline-entry:first-child .timeline-marker {
+  width: 18px;
+  height: 18px;
+  left: -1.75rem;
+  background-color: #2563eb;
+}
+
+/* タイムラインコンテンツカード */
+.timeline-content {
+  background-color: #f8fafc;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+
+.timeline-content:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* タイムライン内の見出しスタイル */
+.timeline-content h1,
+.timeline-content h2,
+.timeline-content h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.timeline-content h1:first-child,
+.timeline-content h2:first-child,
+.timeline-content h3:first-child {
+  margin-top: 0;
+}
+
+.timeline-content p {
+  margin: 0.5rem 0;
+  line-height: 1.7;
+}
+
+.timeline-content p:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content pre {
+  background-color: #1e293b;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.timeline-content code {
+  font-size: 0.85rem;
+}
+
+.timeline-content ul,
+.timeline-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.timeline-content img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+}
+
+/* タイムライン用モバイル調整 */
+@media (max-width: 600px) {
+  .scrap-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .scrap-timeline::before {
+    left: 0.35rem;
+    width: 2px;
+  }
+
+  .timeline-marker {
+    left: -1.3rem;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-entry:first-child .timeline-marker {
+    width: 14px;
+    height: 14px;
+    left: -1.35rem;
+  }
+
+  .timeline-content {
+    padding: 0.8rem 1rem;
+  }
+
+  .scrap-title {
+    font-size: 1.4rem;
+  }
+
+  .status-badge {
+    font-size: 0.6rem;
+  }
+}
+

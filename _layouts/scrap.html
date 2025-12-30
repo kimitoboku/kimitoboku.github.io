@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<article class="scrap h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="scrap-header">
+    <h1 class="scrap-title p-name" itemprop="name headline">
+      {% if page.end_date %}
+        <span class="status-badge status-done">DONE</span>
+      {% else %}
+        <span class="status-badge status-wip">WIP</span>
+      {% endif %}
+      {{ page.title | escape }}
+    </h1>
+    <p class="scrap-meta">
+      <span class="scrap-date-range">
+        <time class="dt-start" datetime="{{ page.start_date | date_to_xmlschema }}">
+          {{ page.start_date | date: "%Y-%m-%d" }}
+        </time>
+        {% if page.end_date %}
+          <span class="date-separator">-</span>
+          <time class="dt-end" datetime="{{ page.end_date | date_to_xmlschema }}">
+            {{ page.end_date | date: "%Y-%m-%d" }}
+          </time>
+        {% else %}
+          <span class="ongoing-indicator">~ 継続中</span>
+        {% endif %}
+      </span>
+    </p>
+  </header>
+
+  <div class="scrap-timeline">
+    {% assign sections = content | split: '<hr' %}
+    {% for section in sections %}
+      {% assign trimmed = section | strip %}
+      {% if trimmed != '' and trimmed != '/>' and trimmed != ' />' %}
+        <div class="timeline-entry">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            {% assign cleaned = section | remove_first: ' />' | remove_first: '/>' %}
+            {{ cleaned }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <footer class="post-footer">
+    <div class="share-buttons">
+      <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title | uri_escape }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="share-button twitter-share">
+        Twitterでシェア
+      </a>
+      <a href="https://b.hatena.ne.jp/entry/{{ site.url }}{{ page.url }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="share-button hatena-share">
+        はてなブックマーク
+      </a>
+    </div>
+  </footer>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
