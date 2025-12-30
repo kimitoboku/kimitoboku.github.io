@@ -35,13 +35,28 @@ layout: default
             {% endif %}
           </ul>
 
-          <p class="post-card-excerpt">
-            {% if post.excerpt %}
-              {{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}
-            {% else %}
-              {{ post.content | strip_html | strip_newlines | truncate: 120 }}
+          {% if post.layout == 'scrap' %}
+            {% assign sections = post.content | split: '<h2' %}
+            {% if sections.size > 1 %}
+            <ul class="scrap-sections-preview">
+              {% for section in sections limit: 6 offset: 1 %}
+                {% assign heading_raw = section | split: '</h2>' | first %}
+                {% assign heading_text = heading_raw | split: '>' | last | strip_html | strip %}
+                {% if heading_text != '' %}
+                  <li class="scrap-section-item">{{ heading_text | truncate: 40 }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
             {% endif %}
-          </p>
+          {% else %}
+            <p class="post-card-excerpt">
+              {% if post.excerpt %}
+                {{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}
+              {% else %}
+                {{ post.content | strip_html | strip_newlines | truncate: 120 }}
+              {% endif %}
+            </p>
+          {% endif %}
         </div>
       </a>
     </article>

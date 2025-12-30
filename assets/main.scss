@@ -202,6 +202,35 @@
   text-transform: capitalize;
 }
 
+/* Scrapセクションプレビュー（トップページカード用） */
+.scrap-sections-preview {
+  list-style: none;
+  margin: 0.3rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.scrap-section-item {
+  font-size: 0.8rem;
+  color: #475569;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scrap-section-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
 /* =====================================================
    SCRAP レイアウト: タイムラインスタイル
    ===================================================== */
