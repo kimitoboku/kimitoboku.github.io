@@ -465,3 +465,192 @@
   }
 }
 
+/* =====================================================
+   PAPER レイアウト: 論文解説ページ
+   ===================================================== */
+
+.paper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.paper-header {
+  margin-bottom: 1.5rem;
+}
+
+.paper-title {
+  font-size: 1.8rem;
+  margin: 0 0 0.5rem;
+}
+
+/* 論文情報カード */
+.paper-info-card {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(129, 140, 248, 0.25);
+}
+
+.paper-info-title {
+  font-size: 1.4rem;
+  margin: 0 0 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.paper-info-title a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transition: border-color 0.2s ease;
+}
+
+.paper-info-title a:hover {
+  border-color: #fff;
+}
+
+.paper-info-authors {
+  font-size: 0.95rem;
+  margin: 0 0 0.5rem;
+  opacity: 0.95;
+}
+
+.paper-info-venue {
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.paper-info-year {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+/* 落合フォーマット 6項目グリッド */
+.paper-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.paper-summary-card {
+  background-color: #fafbfc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.25rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.paper-summary-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+.paper-summary-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #6366f1;
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #e0e7ff;
+}
+
+.paper-summary-card-content {
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.paper-summary-card-content p {
+  margin: 0 0 0.5rem;
+}
+
+.paper-summary-card-content p:last-child {
+  margin-bottom: 0;
+}
+
+.paper-summary-card-content ul,
+.paper-summary-card-content ol {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+
+.paper-summary-card-content li {
+  margin-bottom: 0.25rem;
+}
+
+.paper-summary-card-content a {
+  color: #4f46e5;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.paper-summary-card-content a:hover {
+  border-color: #4f46e5;
+}
+
+/* 本文コンテンツ */
+.paper-content {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.paper-content h2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.paper-content h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #334155;
+}
+
+/* Paper レイアウト モバイル対応 */
+@media (max-width: 768px) {
+  .paper-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .paper-info-card {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .paper-info-title {
+    font-size: 1.2rem;
+  }
+
+  .paper-title {
+    font-size: 1.5rem;
+  }
+
+  .paper-summary-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .paper-summary-card-title {
+    font-size: 0.85rem;
+  }
+
+  .paper-summary-card-content {
+    font-size: 0.85rem;
+  }
+}
+
