@@ -48,6 +48,14 @@ layout: default
               {% endfor %}
             </ul>
             {% endif %}
+          {% elsif post.layout == 'paper' %}
+            <p class="post-card-excerpt">
+              {% if post.what %}
+                {{ post.what | strip_html | strip_newlines | truncate: 120 }}
+              {% else %}
+                {{ post.excerpt | strip_html | strip_newlines | truncate: 120 }}
+              {% endif %}
+            </p>
           {% else %}
             <p class="post-card-excerpt">
               {% if post.excerpt %}
