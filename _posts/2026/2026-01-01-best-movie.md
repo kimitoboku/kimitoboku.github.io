@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 2026年に観た映画のなかからおすすめ
+title: 2025年に観た映画のなかからおすすめ
 date: 2026-01-01
 tags: [雑多, 生活, 映画]
 categorise: 生活
