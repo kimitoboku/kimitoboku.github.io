@@ -18,6 +18,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PAGES_REPO_NWO: ${{ github.repository }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7

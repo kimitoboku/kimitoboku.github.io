@@ -2,6 +2,7 @@
 theme: minima
 title: あの忘れえぬ日々 そのために今生きている
 url: "http://blog.techack.net"
+repository: kimitoboku/kimitoboku.github.io
 encoding: utf-8
 author :
   name : Kento KAWAKAMi
