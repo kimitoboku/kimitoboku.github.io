@@ -35,10 +35,16 @@ jobs:
           ruby-version: "3.2"
           bundler-cache: true
 
+      - name: Install OGP renderer
+        run: sudo apt-get update && sudo apt-get install --yes librsvg2-bin fonts-noto-cjk
+
+      - name: Generate OGP assets
+        run: bundle exec ruby _scripts/generate_ogp_images.rb --config .jekyll-cache/ogp.yml --output _site
+
       - name: Build site
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: bundle exec jekyll build --config _config.yml,.jekyll-cache/ogp.yml --baseurl "${{ steps.pages.outputs.base_path }}"
 
       - name: Generate raw Markdown
         run: bundle exec ruby _scripts/generate_raw_posts.rb
