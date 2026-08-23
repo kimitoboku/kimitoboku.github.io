@@ -36,27 +36,35 @@ layout: default
     </ul>
   </header>
 
-  <div class="scrap-timeline">
-    {% assign sections = content | split: '<hr' %}
-    {% for section in sections %}
-      {% assign trimmed = section | strip %}
-      {% if trimmed != '' and trimmed != '/>' and trimmed != ' />' %}
-        <div class="timeline-entry">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            {% assign section_start = section | slice: 0, 3 %}
-            {% if section_start == ' />' %}
-              {% assign cleaned = section | remove_first: ' />' %}
-            {% elsif section_start contains '/>' %}
-              {% assign cleaned = section | remove_first: '/>' %}
-            {% else %}
-              {% assign cleaned = section %}
-            {% endif %}
-            {{ cleaned }}
-          </div>
-        </div>
-      {% endif %}
-    {% endfor %}
+  {% assign sections = content | split: '<hr' %}
+  <div class="scrap-content e-content" itemprop="articleBody">
+    <div class="scrap-introduction post-content">
+      {{ sections | first }}
+    </div>
+
+    {% if sections.size > 1 %}
+      <div class="scrap-timeline">
+        {% for section in sections offset: 1 %}
+          {% assign trimmed = section | strip %}
+          {% if trimmed != '' and trimmed != '/>' and trimmed != ' />' %}
+            <div class="timeline-entry">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                {% assign section_start = section | slice: 0, 3 %}
+                {% if section_start == ' />' %}
+                  {% assign cleaned = section | remove_first: ' />' %}
+                {% elsif section_start contains '/>' %}
+                  {% assign cleaned = section | remove_first: '/>' %}
+                {% else %}
+                  {% assign cleaned = section %}
+                {% endif %}
+                {{ cleaned }}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 
   <footer class="post-footer">

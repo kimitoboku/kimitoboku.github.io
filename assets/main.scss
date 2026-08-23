@@ -320,8 +320,11 @@
 
 /* タイムラインコンテナ */
 .scrap-timeline {
+  --timeline-indent: 2rem;
+  --timeline-line-left: 0.5rem;
+  --timeline-line-center: calc(var(--timeline-line-left) + 1.5px);
   position: relative;
-  padding-left: 2rem;
+  padding-left: var(--timeline-indent);
   margin-top: 2rem;
 }
 
@@ -329,7 +332,7 @@
 .scrap-timeline::before {
   content: '';
   position: absolute;
-  left: 0.5rem;
+  left: var(--timeline-line-left);
   top: 0;
   bottom: 0;
   width: 3px;
@@ -350,7 +353,7 @@
 /* タイムラインマーカー（ドット） */
 .timeline-marker {
   position: absolute;
-  left: -1.65rem;
+  left: calc(var(--timeline-line-center) - var(--timeline-indent));
   top: 0.5rem;
   width: 14px;
   height: 14px;
@@ -358,6 +361,7 @@
   border: 3px solid #fff;
   border-radius: 50%;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  transform: translateX(-50%);
   z-index: 1;
 }
 
@@ -365,7 +369,6 @@
 .timeline-entry:first-child .timeline-marker {
   width: 18px;
   height: 18px;
-  left: -1.75rem;
   background-color: #2563eb;
 }
 
@@ -432,16 +435,16 @@
 /* タイムライン用モバイル調整 */
 @media (max-width: 600px) {
   .scrap-timeline {
-    padding-left: 1.5rem;
+    --timeline-indent: 1.5rem;
+    --timeline-line-left: 0.35rem;
+    --timeline-line-center: calc(var(--timeline-line-left) + 1px);
   }
 
   .scrap-timeline::before {
-    left: 0.35rem;
     width: 2px;
   }
 
   .timeline-marker {
-    left: -1.3rem;
     width: 12px;
     height: 12px;
   }
@@ -449,7 +452,6 @@
   .timeline-entry:first-child .timeline-marker {
     width: 14px;
     height: 14px;
-    left: -1.35rem;
   }
 
   .timeline-content {
@@ -653,4 +655,3 @@
     font-size: 0.85rem;
   }
 }
-
