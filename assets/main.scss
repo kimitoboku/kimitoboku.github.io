@@ -103,6 +103,63 @@
   padding-right: 1.5rem;
 }
 
+/* 長いサイト名とナビゲーションが狭い画面で重ならないようにする */
+.site-header .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-title {
+  float: none;
+  min-width: 0;
+  line-height: 1.35;
+  padding: 0.75rem 0;
+}
+
+.site-nav {
+  float: none;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 800px) {
+  .site-header .wrapper {
+    max-width: none !important;
+  }
+
+  .site-title {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header .wrapper {
+    display: block;
+  }
+
+  .site-title {
+    display: block;
+    width: calc(100% - 3rem);
+    font-size: 1.25rem;
+    line-height: 1.45;
+    letter-spacing: -0.5px;
+  }
+
+  .page-content > .wrapper {
+    max-width: none !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .post-card-title,
+  .post-title,
+  .paper-title,
+  .scrap-title {
+    line-height: 1.3;
+  }
+}
+
 /* SNSシェアボタン */
 .post-footer {
   margin-top: 3rem;
