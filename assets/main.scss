@@ -111,6 +111,10 @@
   gap: 1.5rem;
 }
 
+.site-header .wrapper::after {
+  display: none;
+}
+
 .site-title {
   float: none;
   min-width: 0;
